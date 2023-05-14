@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+        <title>Boletim - Médias</title>
+    </head>
+<body>
+    <header>
+        <div>
+            <button type="button" onmousedown="adicionaColuna()">+1 Nota</button>
+            <button type="button" onmousedown="removeColuna()">-1 Nota</button>
+        </div>
+        <div>
+            <button type="button" onmousedown="adicionaLinha()">+1 Aluno(a)</button>
+            <button type="button" onmousedown="removeLinha()">-1 Aluno(a)</button>
+        </div>
+        <div>
+            <button type="button" onclick="ordemAlfabetica()">Ordem Alfabética</button>
+            <button type="button" onclick="ordemMedia()">Ordem de Média</button>
+        </div>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Nota 1</th>
+                <th>Média</th>
+                <th>Situação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="numero">1</td>
+                <td><input class="nome" type="text"></td>
+                <td><input class="nota" type="number" min="0" max="100" oninput="calcula()"></td>
+                <td class="media"></td>
+                <td><p class="situacao"></p></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="bottom-div">
+        <p id="heading-media">Média Geral</p>
+        <p>A média da sala é:<br><span id="output-media"></span></p>
+    </div>
+    <button type="button" onclick="calcula()" id="button-verificar">Verificar</button>
+    <button type="button" onclick="limpar()" id="button-limpar">Limpar</button>
+
+</body>
+
+<script src="js/script.js"></script>
+</html>
